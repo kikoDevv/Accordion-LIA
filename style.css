@@ -11,14 +11,33 @@ body {
 }
 
 .ackordion li {
-  border: 1px solid red;
+  border-top: 1px solid red;
+}
+
+/*--La till border bottom till sista element--*/
+.ackordion:last-of-type {
+  border-bottom: 1px solid red;
 }
 
 .ackordion label {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 12px;
   cursor: pointer;
   background: #f7f7f7;
+}
+
+/*--style till + icon --*/
+label::after {
+  content: "+";
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+/*-- gömma input boxen --*/
+input[type="checkbox"] {
+  display: none;
 }
 
 .innehåll {
