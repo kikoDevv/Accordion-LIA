@@ -48,12 +48,17 @@ input[type="checkbox"] {
 }
 
 .innehåll {
-  padding: 12px;
-  display: none;
+  background-color: red;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
 }
 
+/*--för smidigt övergång --*/
 .ackordion input[type="checkbox"]:checked ~ .innehåll {
-  display: block;
+  max-height: 200px;
+  opacity: 1;
 }
 
 /*-- När checkbox status är checked--*/
