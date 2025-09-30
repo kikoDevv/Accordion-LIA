@@ -1,20 +1,25 @@
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .ackordion {
   list-style: none;
-  padding: 0;
+  padding: 0px;
   margin: 0;
+  width: 90vw;
 }
 
 .ackordion li {
   border-top: 1px solid red;
 }
 
-/*--La till border bottom till sista element--*/
+/*--för border bottom till sista element--*/
 .ackordion:last-of-type {
   border-bottom: 1px solid red;
 }
@@ -25,6 +30,8 @@ body {
   align-items: center;
   padding: 12px;
   cursor: pointer;
+  font-family: sans-serif;
+  font-size: 24px;
   background: #f7f7f7;
 }
 
@@ -35,7 +42,7 @@ label::after {
   font-size: 24px;
 }
 
-/*-- gömma input boxen --*/
+/*-- för gömma checkbxen --*/
 input[type="checkbox"] {
   display: none;
 }
@@ -47,4 +54,9 @@ input[type="checkbox"] {
 
 .ackordion input[type="checkbox"]:checked ~ .innehåll {
   display: block;
+}
+
+/*-- När checkbox status är checked--*/
+.ackordion input[type="checkbox"]:checked + label::after {
+  content: "-";
 }
