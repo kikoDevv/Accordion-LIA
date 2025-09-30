@@ -4,3 +4,28 @@ body {
   box-sizing: border-box;
 }
 
+.ackordion {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ackordion li {
+  border: 1px solid red;
+}
+
+.ackordion label {
+  display: block;
+  padding: 12px;
+  cursor: pointer;
+  background: #f7f7f7;
+}
+
+.innehåll {
+  padding: 12px;
+  display: none;
+}
+
+.ackordion input[type="checkbox"]:checked ~ .innehåll {
+  display: block;
+}
