@@ -6,6 +6,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   min-height: 100vh;
+  font-family: sans-serif;
 }
 
 .ackordion {
@@ -30,7 +31,6 @@ body {
   align-items: center;
   padding: 12px;
   cursor: pointer;
-  font-family: sans-serif;
   font-size: 24px;
   background: #f7f7f7;
 }
@@ -50,9 +50,9 @@ input[type="checkbox"] {
 /*------------------- testa kod -------------------*/
 .innehåll {
   display: flex;
-  max-height: 0px;
+  max-height: 800px;
   overflow: hidden;
-  opacity: 0;
+  opacity: 1;
   transition: max-height 0.4s ease, opacity 0.3s ease;
 }
 
@@ -134,15 +134,46 @@ input[type="checkbox"] {
   text-align: center;
   width: 100%;
 }
-
 .gif-v {
   max-height: 360px;
+}
+.neutral-detaljer {
+  display: grid;
+  justify-items: start;
+}
+.neutral-detaljer > p,
+h4 {
+  margin: 0px;
+}
+.neutral-detaljer > P {
+  padding-bottom: 10px;
+}
+
+.neutral-detaljer h4:first-child {
+  margin-bottom: 10px;
 }
 
 /*--underpronation fält--*/
 .underpronation-kontainer {
-  display: grid;
+  display: block;
+  text-align: center;
+  width: 100%;
 }
-.gif-h {
+.gif-v {
   max-height: 360px;
+}
+.underpronation-detaljer {
+  display: grid;
+  justify-items: start;
+}
+.underpronation-detaljer > p,
+h4 {
+  margin: 0px;
+}
+.underpronation-detaljer > P {
+  padding-bottom: 10px;
+}
+
+.underpronation-detaljer h4:first-child {
+  margin-bottom: 10px;
 }
