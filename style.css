@@ -19,7 +19,7 @@ body {
   border-top: 1px solid red;
 }
 
-/*--för border bottom till sista element--*/
+/*--för border-bottom till sista element--*/
 .ackordion:last-of-type {
   border-bottom: 1px solid red;
 }
@@ -47,12 +47,18 @@ input[type="checkbox"] {
   display: none;
 }
 
+/*------------------- testa kod -------------------*/
 .innehåll {
   display: flex;
-  max-height: 0;
+  max-height: 0px;
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.kontainer-h > div:first-child {
+  display: grid;
+  align-items: center;
 }
 
 .kontainer-v,
@@ -67,16 +73,13 @@ input[type="checkbox"] {
   display: grid;
 }
 
-.kontainer-h .div {
-  display: grid;
-}
 .kontainer-h p {
   margin: 0;
 }
 
 /*--för smidigt övergång --*/
 .ackordion input[type="checkbox"]:checked ~ .innehåll {
-  max-height: 200px;
+  max-height: 600px;
   opacity: 1;
 }
 
@@ -93,6 +96,8 @@ input[type="checkbox"] {
 .kontainer-h > div:last-child > div,
 .kontainer-h > div:last-child > p {
   display: flex;
+  align-content: center;
+  justify-content: center;
   flex-direction: column;
   gap: 8px;
 }
@@ -122,4 +127,22 @@ input[type="checkbox"] {
 /*-- andra progress bars procentsats--*/
 .kontainer-h > div:last-child > div:last-child .progress-fill {
   width: 20%;
+}
+/*--Pronation fält--*/
+.neutral-kontainer {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.gif-v {
+  max-height: 360px;
+}
+
+/*--underpronation fält--*/
+.underpronation-kontainer {
+  display: grid;
+}
+.gif-h {
+  max-height: 360px;
 }
