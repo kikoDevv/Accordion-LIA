@@ -42,7 +42,7 @@ label::after {
   font-size: 24px;
 }
 
-/*-- för gömma checkbxen --*/
+/*-- för att gömma checkboxen --*/
 input[type="checkbox"] {
   display: none;
 }
@@ -53,8 +53,8 @@ input[type="checkbox"] {
   max-height: 0px;
   overflow: hidden;
   opacity: 0;
-  padding: 0px;
-  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s;
+  padding: 0px 0px;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s;
 }
 
 /*--för smidigt transition --*/
@@ -137,9 +137,10 @@ input[type="checkbox"] {
 }
 /*--Pronation fält--*/
 .neutral-kontainer {
-  display: block;
+  display: grid;
   text-align: center;
   width: 100%;
+  justify-items: center;
 }
 .gif-v {
   max-height: 360px;
@@ -147,13 +148,15 @@ input[type="checkbox"] {
 .neutral-detaljer {
   display: grid;
   justify-items: start;
+  justify-self: start;
 }
 .neutral-detaljer > p,
 h4 {
   margin: 0px;
 }
-.neutral-detaljer > P {
+.neutral-detaljer > p {
   padding-bottom: 10px;
+  text-align: start;
 }
 
 .neutral-detaljer h4:first-child {
@@ -162,9 +165,10 @@ h4 {
 
 /*--underpronation fält--*/
 .underpronation-kontainer {
-  display: block;
+  display: grid;
   text-align: center;
   width: 100%;
+  justify-items: center;
 }
 .gif-v {
   max-height: 360px;
@@ -177,8 +181,9 @@ h4 {
 h4 {
   margin: 0px;
 }
-.underpronation-detaljer > P {
+.underpronation-detaljer > p {
   padding-bottom: 10px;
+  text-align: start;
 }
 
 .underpronation-detaljer h4:first-child {
@@ -206,8 +211,20 @@ h4 {
   .innehåll {
     display: grid;
   }
+  .ackordion input[type="checkbox"]:checked ~ .innehåll {
+    max-height: 1100px;
+  }
 }
 
-/*--Mobile skärm storkel--*/
+/*--Mobile skärm storlek--*/
 @media (max-width: 480px) {
+  /*-Mindre bild storlek-*/
+  .gif-v,
+  .gif-h {
+    max-width: 300px;
+  }
+  /*-Högre meny längd-*/
+  .ackordion input[type="checkbox"]:checked ~ .innehåll {
+    max-height: 1150px;
+  }
 }
