@@ -53,7 +53,15 @@ input[type="checkbox"] {
   max-height: 0px;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  padding: 0px;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s;
+}
+
+/*--för smidigt transition --*/
+.ackordion input[type="checkbox"]:checked ~ .innehåll {
+  max-height: 600px;
+  opacity: 1;
+  padding: 10px 20px;
 }
 
 .kontainer-h > div:first-child {
@@ -77,12 +85,6 @@ input[type="checkbox"] {
   margin: 0;
 }
 
-/*--för smidigt övergång --*/
-.ackordion input[type="checkbox"]:checked ~ .innehåll {
-  max-height: 600px;
-  opacity: 1;
-}
-
 /*-- När checkbox status är checked--*/
 .ackordion input[type="checkbox"]:checked + label::after {
   content: "-";
@@ -91,6 +93,10 @@ input[type="checkbox"] {
 .kontainer-h > div:last-child {
   display: grid;
   gap: 12px;
+  width: 100%;
+}
+.kontainer-v > div > h4 {
+  margin: 16px 0px;
 }
 
 .kontainer-h > div:last-child > div,
@@ -104,7 +110,8 @@ input[type="checkbox"] {
 
 /*--Progress bar kontainer--*/
 .progress-bar {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 13px;
   background-color: #e0e0e0;
   border-radius: 10px;
@@ -191,4 +198,16 @@ h4 {
 
 .teknik-detaljer > article {
   flex: 1;
+}
+
+/*------------------- Responsiv -------------------*/
+/*--Tablet skärm storlek--*/
+@media (max-width: 768px) {
+  .innehåll {
+    display: grid;
+  }
+}
+
+/*--Mobile skärm storkel--*/
+@media (max-width: 480px) {
 }
