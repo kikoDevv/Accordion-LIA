@@ -17,12 +17,11 @@ body {
 }
 
 .ackordion li {
-  border-top: 1px solid red;
-}
-
-/*--för border-bottom till sista element--*/
-.ackordion:last-of-type {
-  border-bottom: 1px solid red;
+  border: 1.5px solid rgba(128, 128, 128, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 1.5px 4px rgba(0, 0, 0, 0.08);
 }
 
 .ackordion label {
@@ -39,7 +38,12 @@ body {
 label::after {
   content: "+";
   margin-left: 10px;
-  font-size: 24px;
+  font-size: 30px;
+}
+
+/*-- När checkbox status är checked--*/
+.ackordion input[type="checkbox"]:checked + label::after {
+  content: "–";
 }
 
 /*-- för att gömma checkboxen --*/
@@ -47,17 +51,17 @@ input[type="checkbox"] {
   display: none;
 }
 
-/*------------------- testa kod -------------------*/
+/*----- Status för transition slut ------*/
 .innehåll {
   display: flex;
   max-height: 0px;
   overflow: hidden;
   opacity: 0;
   padding: 0px 0px;
-  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s;
+  transition: max-height 0.4s ease, opacity 0.2s ease, padding 0.3s;
 }
 
-/*--för smidigt transition --*/
+/*-- Status för transition start --*/
 .ackordion input[type="checkbox"]:checked ~ .innehåll {
   max-height: 600px;
   opacity: 1;
@@ -83,11 +87,6 @@ input[type="checkbox"] {
 
 .kontainer-h p {
   margin: 0;
-}
-
-/*-- När checkbox status är checked--*/
-.ackordion input[type="checkbox"]:checked + label::after {
-  content: "-";
 }
 
 .kontainer-h > div:last-child {
@@ -199,6 +198,7 @@ h4 {
 
 .teknik-detaljer {
   display: flex;
+  gap: 20px;
 }
 
 .teknik-detaljer > article {
@@ -211,8 +211,11 @@ h4 {
   .innehåll {
     display: grid;
   }
+  .teknik-detaljer {
+    display: grid;
+  }
   .ackordion input[type="checkbox"]:checked ~ .innehåll {
-    max-height: 1100px;
+    max-height: 1150px;
   }
 }
 
